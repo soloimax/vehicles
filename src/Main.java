@@ -98,6 +98,7 @@ public class Main {
                                     System.out.println(v.ShowDetails());
                                 }
                             }
+                            j = m.OutputMenu();
                             if (j == 99) { i = 0; }
                             break;
                         case 98:
