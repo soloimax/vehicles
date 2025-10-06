@@ -9,7 +9,14 @@ public class Main {
         ArrayList<Vehicle> vList = new ArrayList<>();
 
         Menu m = new Menu();
+
         int i = m.MainMenu();
+
+        if (i == 0)
+        {
+            i = m.MainMenu();
+        }
+
 
         do
         {
@@ -20,6 +27,11 @@ public class Main {
             else if (i == 1)
             {
                 int j = m.InputMenu();
+
+                while (j == 0)
+                {
+                    j = m.InputMenu();
+                }
 
                 do
                 {
@@ -32,7 +44,8 @@ public class Main {
                             vList.add(c);
                             System.out.println("Машина добавлена в список транспортных средств.");
                             j = m.InputMenu();
-                            if (j == 99) { i = 0; }
+                            if (j == 0) { j = m.InputMenu(); }
+                            else if (j == 99) { i = 0; }
                             break;
                         case 2:
                             Ship s = new Ship();
@@ -41,7 +54,8 @@ public class Main {
                             vList.add(s);
                             System.out.println("Корабль добавлена в список транспортных средств.");
                             j = m.InputMenu();
-                            if (j == 99) { i = 0; }
+                            if (j == 0) { j = m.InputMenu(); }
+                            else if (j == 99) { i = 0; }
                             break;
                         case 3:
                             Plane p = new Plane();
@@ -50,7 +64,8 @@ public class Main {
                             vList.add(p);
                             System.out.println("Самолет добавлена в список транспортных средств.");
                             j = m.InputMenu();
-                            if (j == 99) { i = 0; }
+                            if (j == 0) { j = m.InputMenu(); }
+                            else if (j == 99) { i = 0; }
                             break;
                         case 99:
                             i = m.MainMenu();
@@ -61,6 +76,10 @@ public class Main {
             else if (i == 2)
             {
                 int j = m.OutputMenu();
+                while (j == 0)
+                {
+                    j = m.OutputMenu();
+                }
                 do
                 {
                     switch (j)
@@ -74,8 +93,9 @@ public class Main {
                                     System.out.println(v.ShowDetails());
                                 }
                             }
-                            j = m.InputMenu();
-                            if (j == 99) { i = 0; }
+                            j = m.OutputMenu();
+                            if (j == 0) { j = m.OutputMenu(); }
+                            else if (j == 99) { i = 0; }
                             break;
                         case 2:
                             System.out.println("Все корабли:");
@@ -87,7 +107,8 @@ public class Main {
                                 }
                             }
                             j = m.OutputMenu();
-                            if (j == 99) { i = 0; }
+                            if (j == 0) { j = m.OutputMenu(); }
+                            else if (j == 99) { i = 0; }
                             break;
                         case 3:
                             System.out.println("Все самолеты:");
@@ -99,7 +120,8 @@ public class Main {
                                 }
                             }
                             j = m.OutputMenu();
-                            if (j == 99) { i = 0; }
+                            if (j == 0) { j = m.OutputMenu(); }
+                            else if (j == 99) { i = 0; }
                             break;
                         case 98:
                             System.out.println("Все транспортные средства:");
@@ -108,7 +130,8 @@ public class Main {
                                 System.out.println(v.ShowDetails());
                             }
                             j = m.OutputMenu();
-                            if (j == 99) { i = 0; }
+                            if (j == 0) { j = m.OutputMenu(); }
+                            else if (j == 99) { i = 0; }
                             break;
                         case 99:
                             i = m.MainMenu();
