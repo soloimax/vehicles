@@ -19,15 +19,17 @@ public final class Car extends Vehicle
         System.out.println("Модель: ");
         this.Model = input.nextLine();
 
+        double mSpeed = 0;
         System.out.println("Максимальная скорость: ");
         try
         {
-            this.MaxSpeed = input.nextDouble();
+            mSpeed = input.nextDouble();
         }
         catch (Exception e)
         {
-            this.MaxSpeed = 0;
+            mSpeed = 0;
         }
+        this.MaxSpeed = mSpeed;
 
         System.out.println("Год выпуска: ");
         try

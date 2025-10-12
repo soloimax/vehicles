@@ -6,9 +6,6 @@ import static java.util.Arrays.binarySearch;
 public class Menu
 {
     protected static int[] mainoptionsArray = new int[] {1,2,99};
-    protected static int[] inputoptionsArray = new int[] {1,2,3,99};
-    protected static int[] outputoptionsArray = new int[] {1,2,3,98,99};
-
 
     public static int MainMenu()
     {
@@ -30,11 +27,12 @@ public class Menu
             selection = 0;
         }
 
+
         int serachResult = binarySearch(mainoptionsArray, 0, mainoptionsArray.length, selection);
 
         if(serachResult < 0)
         {
-            System.out.println("Укажите раздел меню в соответствии с указанными вариантами");
+            System.out.println("Выберете раздел меню");
             selection = 0;
         }
 
@@ -63,11 +61,11 @@ public class Menu
             selection = 0;
         }
 
-        int serachResult = binarySearch(inputoptionsArray, 0, inputoptionsArray.length, selection);
-        if(serachResult < 0)
+        InputOptions res = InputOptions.getValue(selection);
+
+        if(res == null)
         {
-            System.out.println("Укажите раздел меню в соответствии с указанными вариантами");
-            selection = 0;
+            System.out.println("Выберете раздел меню");
         }
 
         return selection;
@@ -95,11 +93,10 @@ public class Menu
             selection = 0;
         }
 
-        int serachResult = binarySearch(outputoptionsArray, 0, outputoptionsArray.length, selection);
-        if(serachResult < 0)
+        OutputOptions res = OutputOptions.getValue(selection);
+        if(res == null)
         {
-            System.out.println("Укажите раздел меню в соответствии с указанными вариантами");
-            selection = 0;
+            System.out.println("Выберете раздел меню");
         }
 
         return selection;

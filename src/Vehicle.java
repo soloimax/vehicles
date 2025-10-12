@@ -21,8 +21,17 @@ public sealed class Vehicle permits Car, Plane, Ship
         System.out.println("Модель: ");
         this.Model = input.nextLine();
 
+        double mSpeed = 0;
         System.out.println("Максимальная скорость: ");
-        this.MaxSpeed = input.nextDouble();
+        try
+        {
+            mSpeed = input.nextDouble();
+        }
+        catch (Exception e)
+        {
+            mSpeed = 0;
+        }
+        this.MaxSpeed = mSpeed;
 
         System.out.println("Год выпуска: ");
         this.Year = input.nextInt();
